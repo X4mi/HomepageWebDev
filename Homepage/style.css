@@ -104,11 +104,12 @@ a{
 }
 
 details{
-    width: fit-content;
+    width: max-content;
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
     }
+
 details summary:hover{
     cursor: pointer;
     color: aqua;
@@ -159,7 +160,7 @@ footer {
     color: rgba(46,47,47,255);
     text-shadow: -1px 0 rgba(45,168,188,255), 0 1px rgba(45,168,188,255), 1px 0 rgba(45,168,188,255), 0 -1px rgba(45,168,188,255);
     font-size: 20px;
-    width: fit-content;
+    width: max-content;
     margin-top: 30px;
     padding: 10px;
 
@@ -175,8 +176,8 @@ dialog {
     position: absolute;
     bottom: -1020px;
     margin-left: 20%;
-    width: fit-content;
-    height: fit-content;
+    width: max-content;
+    height: max-content;
     z-index: 10;
     border-radius: 0px;
     background-color: black;
