@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Maximilian Kiermeier">
+    <title>Website</title>
+    <base href="index.html">
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        html {
+            background-image: url('src/mainbackground.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        h4{
+            margin-top: 0px;
+        }
+
+        section{
+            width: fit-content;
+        } 
+
+        
+        li {
+            margin-bottom: 10px;
+        }
+
+        span {
+            color:black;
+        }
+
+        #wbr {
+            width: 70%;
+        }
+
+        #weitere {
+            float:left;
+            margin-left: 30px;
+        }
+
+        #semantische {
+            float: left;
+        }
+
+        main {
+            overflow: hidden;
+        }
+        
+        #weitere div {
+            margin-top: 20px;
+        }
+
+        #weitere h5 {
+            margin-bottom: 15px;
+        }
+
+        canvas{
+            width: 100%;
+        }
+
+        option:checked {
+            background: linear-gradient(rgba(45,168,188,255), rgba(45,168,188,255));
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+        button {
+            border-radius: 5px;
+            border-color: black;
+            color: rgba(46,47,47,255);
+            font-size: 20px;
+        }
+
+        canvas, button, input, textarea, select {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="src/logo.png" alt="Logo X4mi" width="250" height="250" class="logo"></a>
+        <aside>
+            <nav class="vertical nav">
+                <menu class="menubar">
+                    <li class="menubarli"><a href="index.html">Start</a></li>
+                    <li class="menubarli"><a href="about.html">About</a></li>
+                    <li class="menubarli"> <a href="runescape.html">Runescape</a></li>
+                    <li class="menubarli"><a href="csgo.html">CounterStrike</a></li>
+                    <li class="menubarli" id="restliche"><a href="restlicheElemente.html">RestlicheElemente</a></li>
+                </menu>
+            </nav>
+        </aside>
+    </header>
+    <main>
+        <article>
+            <h1 class="mainheading">Restliche Elemente</h1>
+            <section>
+                <h4>Ascii Art</h4>
+                <pre>                    
+                     __  __            _      __          __  _         _ _       
+                    |  \/  |          (_)     \ \        / / | |       (_) |      
+                    | \  / | __ ___  ___ ___   \ \  /\  / /__| |__  ___ _| |_ ___ 
+                    | |\/| |/ _` \ \/ / / __|   \ \/  \/ / _ \ '_ \/ __| | __/ _ \
+                    | |  | | (_| |>  <| \__ \    \  /\  /  __/ |_) \__ \ | ||  __/
+                    |_|  |_|\__,_/_/\_\_|___/     \/  \/ \___|_.__/|___/_|\__\___|                
+                                    </pre>   
+            </section>
+            <section id="semantische">
+                <h4>Semantsiche Text Tags</h4>
+                <ul>
+                    <li><a href="https://www.google.de" target="_blank">Ein Link zu Google</a></li>
+                    <li>Wenn ich etwas <em>kursiv</em> schreibe.</li>
+                    <li>Wenn ich etwas <strong>fett</strong> schreibe.</li>
+                    <li>Wenn ich etwas <small>klein</small> schreibe.</li>
+                    <li>Wenn ich etwas <s>durchschreiche</s>.</li>
+                    <li>Wenn ich eine <cite>Referenz</cite> auf ein Werk mache.</li>
+                    <li>Wenn ich etwas <q>zitiere</q>.</li> 
+                    <li>Wenn ich etwas <dfn><abbr title="definiere">dfn</abbr></dfn>.</li>
+                    <li>Wenn ich etwas <ruby>描述<rp></rp><rt>beschreibe</ruby>.</li> 
+                    <li>Wenn ich etwas <data value="1234"> einen Wert hinzufügen will.</li> 
+                    <li>Wenn ich code darstellen will: <code>System.out.println("Hello");</code>.</li> 
+                    <li>Wenn ich eine <var>Variable</var> schreibe.</li> 
+                    <li>Wenn ich <samp>Computer generierte Ausgaben</samp> schreibe.</li> 
+                    <li>Wenn ich Tastenkombinationen: <kbd>Alt+F4</kbd> schreibe.</li> 
+                    <li>Wenn ich etwas <sub>im index</sub> schreibe.</li> 
+                    <li>Wenn ich etwas <sup>hochgestellt</sup> schreibe.</li> 
+                    <li>Wenn ich die <i lang="en">language</i> im Satz ändere.</li> 
+                    <li>Wenn ich auf etwas <b>aufmerksam</b> machen will.</li> 
+                    <li>Wenn ich etwas <u>unterstrichen</u> schreibe.</li> 
+                    <li>Wenn ich etwas <mark>markiere</mark>.</li> 
+                    <li>Wenn ich die <bdi>Textrichtung umkehre</bdi>.</li> 
+                    <li>Wenn ich die <bdo>Texrichtung überschreibe</bdo>.</li> 
+                    <li>Wenn ich etwas <span>anders stylen</span> möchte.</li> 
+                    <li>Wenn ich einen<br> Zeilenumbruch <br> möchte.</li> 
+                    <li id="wbr">Wenn ich einen Möglichkeit <wbr> zum Zeilenumbruch bringe</li> 
+                    <li><ins>Wenn ich nachträglich etwas einfüge.</ins></li> 
+                    <li><del>Wenn ich nachträglich etwas entferne.</del></li> 
+                </ul>
+            </section>
+            <section id="weitere">
+                <h4>Weitere Elemente</h4>
+                <div>
+                    <h5>Ladebalken der 40% anzeigen</h5>
+                    <fieldset>
+                        <legend>Laden</legend>    
+                        Fortschritt: <meter min=0 max=100 value=40></meter>
+                </div>
+                <div> 
+                    <h5>Canvas mit Button zum Füllen</h5>
+                    <div><button onclick="draw()">Click Me</button></div>
+                    <div><canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas></div>      
+                    <script>
+                        function draw()
+                        {
+                        var c = document.getElementById("myCanvas");
+                        var ctx = c.getContext("2d");
+                        ctx.font = "20px Arial";
+                        ctx.fillText("Hallo euch allen!", 10, 50);
+                        }
+                    </script>
+                </div>
+            </section>
+        </article>
+    </main>
+        <footer>
+            <address>
+            Contact Me:
+            <a href="mailto:maximilian.kiermeier@hof-university.de">Maximilian Kiermeier</a>
+            </address>
+            <small>Made by Maximilian Kiermeier <time>2021-03</time></small> 
+        </footer>
+</body>
+</html>

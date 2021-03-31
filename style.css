@@ -1,0 +1,237 @@
+
+#restliche a{
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+
+#restliche a:hover {
+    color: red;
+} 
+
+.menubarli{
+    list-style-type: none;
+    margin: 30px;
+    display: inline;
+}
+
+.mainheading{
+    font-size: 60px;
+    color: black;
+    text-shadow: -2px 0 rgba(45,168,188,255), 0 2px rgba(45,168,188,255), 2px 0 rgba(45,168,188,255), 0 -2px rgba(45,168,188,255);
+    margin: 30px;
+}
+
+.mainheading h1 {
+    margin: 0;
+    font-size: 80px;
+}
+
+.mainheading h3 {
+    margin: 0;
+}
+
+.logo {
+    border-bottom-right-radius: 50px ;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+}
+
+.logo:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+h4{
+    font-size: 50px;
+    margin: 0px;
+}
+
+h5{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    text-decoration: 3px underline;
+    text-decoration-color: lightblue ;
+}
+
+h6 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.righth {
+    text-align: right;
+}
+
+.inlineDisplay {
+    overflow: hidden;
+}
+
+.inlineDisplay div div {
+    margin: 2%;
+    width: 46%;
+    float: left;
+}
+
+.inlineDisplay div div div {
+    float: none;
+}
+
+.menubarli a {
+    font-size: 40px;
+    color: rgba(46,47,47,255);
+    text-shadow: -1px 0 rgba(45,168,188,255), 0 1px rgba(45,168,188,255), 1px 0 rgba(45,168,188,255), 0 -1px rgba(45,168,188,255);
+    text-decoration: none;
+}
+
+.menubarli a:hover {
+    color: rgba(45,168,188,255);
+    text-decoration: none;
+} 
+     
+a:hover {
+    color: rgba(45,168,188,255);
+    text-decoration: underline;
+    text-decoration-color: rgba(45,168,188,255) ;
+}   
+a:active, .menubarli a:active {
+    color:aqua;
+}
+
+a{
+    color: lightblue;
+    text-decoration: none;
+}
+
+details{
+    width: fit-content;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+details summary:hover{
+    cursor: pointer;
+    color: aqua;
+}
+
+menu {
+    background: black;
+    padding-inline-start: 0;
+    display:flex; 
+    flex-direction:row;
+    margin: 0px;
+    border-top-right-radius: 50px ;
+    border-bottom-right-radius: 50px;
+}
+
+header {
+    position: sticky;
+    top: -1px;
+    margin-left: 4px;
+    z-index: 10;
+    width: fit-content;
+}
+
+aside {
+    display: inline-block;
+    position: absolute;
+}
+
+main {
+    width: 75%;
+    margin-left: 13%;
+    margin-top: -40px;
+}
+
+section, dialog {
+    background:  rgba(46,47,47,255);
+    border: 3px solid lightblue;
+    border-radius: 60px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+article {
+    background: rgba(46,47,47,255);
+    background-color: transparent;
+}
+footer {
+    background: black;
+    color: rgba(46,47,47,255);
+    text-shadow: -1px 0 rgba(45,168,188,255), 0 1px rgba(45,168,188,255), 1px 0 rgba(45,168,188,255), 0 -1px rgba(45,168,188,255);
+    font-size: 20px;
+    width: fit-content;
+    margin-top: 30px;
+    padding: 10px;
+
+}
+html, dialog{
+    font-family: sans-serif;
+    font-size: 20px;
+    padding: 30px;
+    color: rgba(45,168,188,255);
+}
+
+dialog {
+    position: absolute;
+    bottom: -1020px;
+    margin-left: 20%;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    border-radius: 0px;
+    background-color: black;
+    border-color: rgba(45,168,188,255);
+}
+
+#feedback legend {
+   margin-bottom: 5px;
+}
+
+#feedback table{
+    width: 100%;
+}
+
+#feedback th {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+#feedback td {
+    margin-bottom: 15px;
+} 
+
+#textlabel {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    display: block;
+}
+
+progress {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    height: 110px;
+}
+
+button, input, textarea, select {
+    background-color: lightblue;
+}
+
+button {
+    margin-top: 5px;
+    border-radius: 5px;
+    border-color: lightblue;
+    background-color: black;
+    color: rgba(45,168,188,255);
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: lightblue;
+    color: black;
+}
+

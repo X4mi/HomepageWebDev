@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Maximilian Kiermeier">
+    <title>Website</title>
+    <base href="index.html">
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        html {
+            background-image: url('src/mainbackground.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h4{
+            margin-top: 0px;
+        }
+
+        p {
+            margin-bottom: 0px;
+        }
+
+        embed{
+        width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <audio id="audio_play">
+            <source src="src/about/epic.mp3" type="audio/mpeg"/>
+        </audio>
+        <img src="src/logo.png" alt="Logo X4mi" width="250" height="250" onClick="play()" class="logo">
+        <script>
+            function play()
+            {
+            document.getElementById('audio_play').play();
+            showContent();
+            }
+        </script>
+        <aside>
+            <nav class="vertical nav">
+                <menu class="menubar">
+                    <li class="menubarli"><a href="index.html">Start</a></li>
+                    <li class="menubarli"><a href="about.html">About</a></li>
+                    <li class="menubarli"> <a href="runescape.html">Runescape</a></li>
+                    <li class="menubarli"><a href="csgo.html">CounterStrike</a></li>
+                    <li class="menubarli" id="restliche"><a href="restlicheElemente.html">RestlicheElemente</a></li>
+                </menu>
+            </nav>
+        </aside>
+    </header>
+    <main>
+        <article>
+            <hgroup class="mainheading">
+                <h1>Maxi 'X4mi' K.</h1>
+                <h3>Gamer</h3>
+            </hgroup>
+            <section class="inlineDisplay">
+                <h4>About Me</h4>
+                <div>
+                    <p>Hello, my name is Maxi "X4mi" K. I'm a 21 year old gamer who loves Runescape and Counterstrike. My nickname as, you guessed it is "X4mi" on almost all my active platforms. 
+                    I'm in the scene of gaming for a long time now. I've played a big variety of games in all kinds of genres, but the ones I stuck to the most are Runescape and Csgo. 
+                    <br>
+                    I got introduced to Runescape about 10 years ago and have been playing it since. 
+                    <br>
+                    CounterStrike: Global Offensive on the other hand, I got my hands on at 2012 but started actively about 2015. 
+                    <br>
+                    This website is about some of my experiences in those 2 Games as well as some some Information about myself.
+                    <a href="about.html">Read more...</a>
+                    </p>
+                </div>
+            </section>
+            <section class="inlineDisplay">
+                <h4 class="righth">Runescape</h4>
+                <div>
+                    <div>
+                        <figure>
+                            <embed src="src/runescape/rsgif.gif">    
+                        </figure>               
+                    </div>
+                    <div> 
+                        <hr>
+                        Runescape is a MMORG which is around since 2001. It features a variety of content like quests skilling and combat to name a few. Runescape has been with me a huge portion of my life. To this date i spent about 12.000 hours in this world and I still enjoy playing it. <br>
+                        <a href="runescape.html">Read more...</a>
+                    </div>
+                </div>
+            </section>
+            <section class="inlineDisplay"> 
+                <h4>CounterStrike</h4>
+                <div>
+                    <div>
+                        <hr>
+                        Counter-Strike: Global Offensive (CS:GO) is a multiplayer first-person shooter developed by Valve. The game pits two teams, Terrorists and Counter-Terrorists, against each other in different objective-based game modes. The most common game modes involve the Terrorists planting a bomb while Counter-Terrorists attempt to stop them. <br>
+                        tetive nature is something I enjoy alot. I am thriving to become a better constantly. <br>
+                        <a href="csgo.html">Read more...</a>
+                    </div> 
+                    <div>
+                        <figure>
+                            <embed src="src/csgo/csgogif.gif" id="csgogif">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <address>
+        Contact Me:
+        <a href="mailto:maximilian.kiermeier@hof-university.de">Maximilian Kiermeier</a>
+        </address>
+        <small>Made by Maximilian Kiermeier <time>2021-03</time></small> 
+        <br>
+        <button id="open-feedback">Feedback</button>
+    </footer>
+    <dialog id="feedback" >
+        <!-- im Webserver später mal als Post implementieren-->
+        <form onsubmit="alert('Thank you!')" id="feedbackform">
+        <fieldset>
+            <legend class="mainheading">Feedback</legend>    
+            <div>
+                <table>
+                    <tbody> 
+                        <tr>
+                            <th>Last Name</th>
+                            <td>     
+                                <input type="text"></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>First Name</th>
+                            <td>     
+                                <input type="text"></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Experience</th>
+                            <td>                                   
+                                <select>
+                                    <optgroup label="worst"></optgroup>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <optgroup label="best"></optgroup>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>The Topic</th>
+                            <td>     
+                                <input list="choice">   
+                                    <datalist id="choice">
+                                        <option>Design</option>
+                                        <option>Content</option>
+                                    </datalist>
+                                </input>
+                            </td>
+                        </tr>
+                    </tbody>
+                  </table>
+                  <div>
+                    <label id="textlabel"><strong>Feedback</strong></label>
+                    <textarea maxlength="300" id="textarea"></textarea>
+                    <progress max="100" value="0" id="progress"></progress>
+                    <output id=count></output> characters left
+                  </div>
+            </div>
+           </fieldset> 
+           <button id="send" type="submit">send</button>
+           <button id="clear" type="reset">clear</button> 
+           <button id="close-feedback" type="reset">back</button>	
+           </form>
+    </dialog>
+    <div>
+        <template>
+            <h4 style="position: absolute; top: 45px; z-index: 10; margin-left: 40px;">Got ya!</h4>
+        </template>
+        <script src="feedback.js"></script>
+        <!-- Button ausblenden ohne JS-->
+        <noscript>
+            <style type="text/css">
+                #open-feedback {
+                    display: none;
+                }
+            </style>
+        <noscript>
+    </div>
+</body>
+</html>
