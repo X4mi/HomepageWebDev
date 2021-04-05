@@ -7,7 +7,7 @@ var feedback = document.getElementById("feedback");
 count.innerHTML = length;
 
 form.onreset = function () {
-    count.innerHTML = length;
+    count.value = length;
     progress.setAttribute("value", 0)
 };
 
