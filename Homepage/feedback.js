@@ -12,7 +12,7 @@ form.onreset = function () {
 };
 
 area.onkeyup = function () {
-    count.innerHTML = (length - this.value.length);
+    count.value = (length - this.value.length);
     progress.setAttribute("value", Math.round((this.value.length / length * 100)))
 };
 
