@@ -150,6 +150,7 @@ section, dialog {
     border-radius: 60px;
     padding: 30px;
     margin-bottom: 30px;
+    text-align: justify;
 }
 article {
     background: rgba(46,47,47,255);
