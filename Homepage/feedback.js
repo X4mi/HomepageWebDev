@@ -3,6 +3,7 @@ var length = area.getAttribute("maxlength");
 var count = document.getElementById('count');
 var progress = document.getElementById('progress');
 var form = document.getElementById('feedbackform');
+var feedback = document.getElementById("feedback");
 count.innerHTML = length;
 
 form.onreset = function () {
@@ -15,17 +16,12 @@ area.onkeyup = function () {
     progress.setAttribute("value", Math.round((this.value.length / length * 100)))
 };
 
-document.querySelector('#open-feedback').addEventListener('click', toggleDialog);
-document.querySelector('#close-feedback').addEventListener('click', toggleDialog);
-function toggleDialog(event) {
-    var dialog = document.querySelector('#feedback');
-    var closebutton = document.querySelector('#close-feedback');
-    if (!dialog.hasAttribute('open')) {
-        dialog.setAttribute('open', 'open');
-    }
-    else {
-        dialog.removeAttribute('open');
-    }
+function openDialog() {
+    feedback.showModal();
+}
+
+function closeDialog() {
+    feedback.close();
 }
 
 function showContent() {

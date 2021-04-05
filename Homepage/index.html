@@ -124,7 +124,7 @@
         </address>
         <small>Made by Maximilian Kiermeier <time>2021-03</time></small>
         <br>
-        <button id="open-feedback">Feedback</button>
+        <button id="open-feedback" onclick="openDialog()">Feedback</button>
     </footer>
     <dialog id="feedback">
         <!-- im Webserver später mal als Post implementieren-->
@@ -183,7 +183,7 @@
             </fieldset>
             <button id="send" type="submit">send</button>
             <button id="clear" type="reset">clear</button>
-            <button id="close-feedback" type="reset">back</button>
+            <button id="close-feedback" onclick="closeDialog()" type="reset">close</button>
         </form>
     </dialog>
     <div>

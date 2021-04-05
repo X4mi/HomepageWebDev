@@ -176,8 +176,7 @@ html, dialog {
 }
 
 dialog {
-    position: absolute;
-    bottom: -1020px;
+    bottom: 50px;
     margin-left: 20%;
     width: max-content;
     height: max-content;
