@@ -41,6 +41,29 @@
         dd {
             margin-top: 15px;
         }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding : 10px;
+        }
+
+        th{
+            font-size: 30px;
+        }
+
+        td {
+            color: lightblue;
+        }
+
+        .num{
+            font-size: 30px;
+            color: rgba(45, 168, 188, 255);
+        }
     </style>
 </head>
 
@@ -52,7 +75,7 @@
                 <menu class="menubar">
                     <li class="menubarli"><a href="index.html">Start</a></li>
                     <li class="menubarli"><a href="about.html">About</a></li>
-                    <li class="menubarli"> <a href="runescape.html">Runescape</a></li>
+                    <li class="menubarli"> <a href="runescape.php">Runescape</a></li>
                     <li class="menubarli"><a href="csgo.html">CounterStrike</a></li>
                     <li class="menubarli" id="restliche"><a href="restlicheElemente.html">RestlicheElemente</a></li>
                 </menu>
@@ -120,12 +143,33 @@
                             <dd>Pvm to achieve <a href="https://runescape.wiki/w/Boss_pets" target="_blank">bosspets</a>
                                 for the
                                 <a href="https://runescape.wiki/w/Insane_Final_Boss" target="_blank">insane Final
-                                    Boss</a> feat <br>(mainly Aod and Solak)
+                                    Boss</a> feat <br>(mainly Aod)
                             </dd>
 
                         </dl>
                     </div>
                 </div>
+            </section>
+            <section>
+                <h4 id="statheading">120 Skills to go</h4>
+                <div>
+                    <p id="120stats" style="display: none">
+                    <?php 
+                    include('api.php');
+                    getUserData("x4mi");
+                    ?>
+                    </p>
+                    <table id="skilltable">
+                        <tr>
+                            <th>#</th>
+                            <th>Skill</th>
+                            <th>Current XP</th>
+                            <th>XP to 120</th>
+                        </tr>
+                    </table>
+                    <script src="runescape.js"></script>
+                </div>
+                </script>
             </section>
             <section>
                 <h4>My Timeline</h4>
