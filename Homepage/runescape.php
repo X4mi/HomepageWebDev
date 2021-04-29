@@ -198,7 +198,7 @@
             </section>
             <section>
                 <h4>My Timeline</h4>
-                <a href="runescape.html#end">
+                <a href="runescape.php#end">
                     <h3 id="start">To the origin</h3>
                 </a>
                 <div class="timeline">
@@ -521,7 +521,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="runescape.html#start">
+                <a href="runescape.php#start">
                     <h3 id="end">Back to the top</h3>
                 </a>
             </section>
