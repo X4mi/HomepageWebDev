@@ -1,12 +1,13 @@
 window.addEventListener("load", e => {
-    let str = document.getElementById("120stats").innerHTML;
+    let elem = document.getElementById("120stats");
+    let str = elem.innerHTML;
     let stats = JSON.parse(str);
     let skills = stats.skillvalues;
     skills.forEach(element => {
         let map = getMap();
         element.name = map[element.id][(element.id).toString()]
     });
-    printSkills(skills);
+    printSkills(skills, stats.name, elem.getAttribute("choice"));
 })
 
 
@@ -19,51 +20,83 @@ function numberWithDots(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-function printSkills(skills) {
+function printSkills(skills, name, choice) {
+    const LEVEL99 = 13034431;
     const LEVEL120 = 104273167;
+    const L200M = 200000000;
+    const NS = "http://www.w3.org/1999/xhtml";
     let table = document.getElementById("skilltable")
+    let filter = LEVEL120;
     let tr, td;
     let cnt = 0;
+
+    switch (choice) {
+        case "Level-99":
+            document.getElementById("99").setAttribute("selected", true);
+            filter = LEVEL99;
+            break;
+        case "Level-120":
+            document.getElementById("120").setAttribute("selected", true);
+            filter = LEVEL120;
+            break;
+        case "200m":
+            document.getElementById("200").setAttribute("selected", true);
+            filter = L200M;
+            break;
+    }
+
     skills.forEach(skill => {
         let xp = Math.round(skill.xp / 10)
-        if (xp < LEVEL120) {
-            tr = document.createElementNS("http://www.w3.org/1999/xhtml", "tr");
+        if (xp < filter) {
+            tr = document.createElementNS(NS, "tr");
 
-            td = document.createElementNS("http://www.w3.org/1999/xhtml", "td");
+            td = document.createElementNS(NS, "td");
             td.innerHTML = ++cnt;
             td.setAttribute("class", "num");
             tr.appendChild(td);
 
-            td = document.createElementNS("http://www.w3.org/1999/xhtml", "td");
+            td = document.createElementNS(NS, "td");
             td.innerHTML = skill.name;
             tr.appendChild(td);
 
-            td = document.createElementNS("http://www.w3.org/1999/xhtml", "td");
+            td = document.createElementNS(NS, "td");
             td.innerHTML = numberWithDots(xp);
             tr.appendChild(td);
 
-            td = document.createElementNS("http://www.w3.org/1999/xhtml", "td");
-            td.innerHTML = numberWithDots(LEVEL120 - xp);
+            td = document.createElementNS(NS, "td");
+            td.innerHTML = numberWithDots(filter - xp);
             tr.appendChild(td);
 
-            td = document.createElementNS("http://www.w3.org/1999/xhtml", "td");
+            td = document.createElementNS(NS, "td");
 
-            meter = document.createElementNS("http://www.w3.org/1999/xhtml", "progress");
+            meter = document.createElementNS(NS, "progress");
             meter.setAttribute("id", "meter");
-            meter.setAttribute("value", Math.trunc(xp/LEVEL120*1000)/1000);
-            meter.innerHTML = Math.trunc((xp/LEVEL120) * 1000)/10+'%';
+            meter.setAttribute("value", Math.trunc(xp / filter * 1000) / 1000);
+            meter.innerHTML = Math.trunc((xp / filter) * 1000) / 10 + '%';
             td.appendChild(meter);
 
-            label = document.createElementNS("http://www.w3.org/1999/xhtml", "label");
+            label = document.createElementNS(NS, "label");
             label.setAttribute("id", "lmeter");
             label.setAttribute("for", "meter");
-            label.innerHTML = Math.trunc((xp/LEVEL120) * 1000)/10+"%";
+            label.innerHTML = Math.trunc((xp / filter) * 1000) / 10 + "%";
             td.appendChild(label);
 
             tr.appendChild(td);
 
             table.appendChild(tr);
-        } 
+        }
     });
-    document.getElementById("statheading").innerHTML = "#"+cnt + " - " + document.getElementById("statheading").innerHTML;
+    if(cnt == 0) {
+        tr = document.createElementNS(NS, "tr");
+        td = document.createElementNS(NS, "td");
+
+        td.setAttribute("colspan", "5");
+        td.setAttribute("style", " text-align: center")
+        td.innerHTML = name + " hat alle Skills auf " + choice;
+
+        tr.appendChild(td);
+        table.appendChild(tr);
+    }
+    document.getElementById("statheading").innerHTML = "#" + cnt + " " + choice + " Skills for <u>" + name + "</u> to go";
+    document.getElementById("playername").value = name;
 }

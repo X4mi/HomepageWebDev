@@ -10,11 +10,11 @@
     curl_close($curl);
     return $result;
     }
-    function getUserData($name) {
-    $url = 'https://apps.runescape.com/runemetrics/profile/profile?user=';
-    $url .= $name;
+    function getUserData($name, $choice) {
+    $name = str_replace(" ", "+", $name);
+    $url = 'https://apps.runescape.com/runemetrics/profile/profile?user='.$name;
     $get_data = callAPI('GET', $url);
     $response = json_decode($get_data, true);
-    echo json_encode($response);
+    echo '<p id="120stats" style="display: none" choice='.$choice.'>'.json_encode($response).'</p>';
     }
 ?>

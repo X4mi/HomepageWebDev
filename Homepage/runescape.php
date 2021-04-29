@@ -68,6 +68,14 @@
         #meter {
             margin-right: 10px;
         }
+        #playername, #choice, #playerform{
+            font-size: 25px;
+        }
+
+        #statheading{
+            margin-bottom : 30px;
+            font-size: 40px;
+        }
     </style>
 </head>
 
@@ -143,7 +151,7 @@
                             <dt>
                                 <h5>Current goals</h5>
                             </dt>
-                            <dd>Level 120 in all Skills (20/28 done)</dd>
+                            <dd>Level 120 in all Skills</dd>
                             <dd>Pvm to achieve <a href="https://runescape.wiki/w/Boss_pets" target="_blank">bosspets</a>
                                 for the
                                 <a href="https://runescape.wiki/w/Insane_Final_Boss" target="_blank">insane Final
@@ -156,13 +164,25 @@
             </section>
             <section>
                 <h4 id="statheading">120 Skills to go</h4>
+                <form method="POST" id="playerform">
+                <label>Playername: <input type="text" name="playername" value="" id="playername"></label>
+                <select name="choice" id="choice">
+                    <option value="Level-99" id="99">LvL 99</option>
+                    <option value="Level-120" id="120" selected>LvL 120</option>
+                    <option value="200m" id="200">200m</option>
+                </select> 
+                <button type="submit">Go</button>
+                </form>
                 <div>
-                    <p id="120stats" style="display: none">
                     <?php 
                     include('api.php');
-                    getUserData("x4mi");
+                    if(empty($_POST)) {
+                    getUserData("x4mi", "120");
+                    }
+                    else {
+                    getUserData($_POST["playername"], $_POST["choice"]);
+                    }
                     ?>
-                    </p>
                     <table id="skilltable">
                         <tr>
                             <th>#</th>
