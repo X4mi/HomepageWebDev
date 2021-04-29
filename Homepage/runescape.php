@@ -162,7 +162,7 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section id="stats"> 
                 <h4 id="statheading">120 Skills to go</h4>
                 <form method="POST" id="playerform">
                 <label>Playername: <input type="text" name="playername" value="" id="playername"></label>

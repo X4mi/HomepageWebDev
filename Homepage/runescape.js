@@ -92,7 +92,7 @@ function printSkills(skills, name, choice) {
 
         td.setAttribute("colspan", "5");
         td.setAttribute("style", " text-align: center")
-        td.innerHTML = name + " hat alle Skills auf " + choice;
+        td.innerHTML = name + " has all skills on " + choice;
 
         tr.appendChild(td);
         table.appendChild(tr);
