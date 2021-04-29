@@ -23,7 +23,6 @@ function printSkills(skills) {
     const LEVEL120 = 104273167;
     let table = document.getElementById("skilltable")
     let tr, td;
-    console.log(skills)
     let cnt = 0;
     skills.forEach(skill => {
         let xp = Math.round(skill.xp / 10)
@@ -45,6 +44,22 @@ function printSkills(skills) {
 
             td = document.createElementNS("http://www.w3.org/1999/xhtml", "td");
             td.innerHTML = numberWithDots(LEVEL120 - xp);
+            tr.appendChild(td);
+
+            td = document.createElementNS("http://www.w3.org/1999/xhtml", "td");
+
+            meter = document.createElementNS("http://www.w3.org/1999/xhtml", "progress");
+            meter.setAttribute("id", "meter");
+            meter.setAttribute("value", Math.trunc(xp/LEVEL120*1000)/1000);
+            meter.innerHTML = Math.trunc((xp/LEVEL120) * 1000)/10+'%';
+            td.appendChild(meter);
+
+            label = document.createElementNS("http://www.w3.org/1999/xhtml", "label");
+            label.setAttribute("id", "lmeter");
+            label.setAttribute("for", "meter");
+            label.innerHTML = Math.trunc((xp/LEVEL120) * 1000)/10+"%";
+            td.appendChild(label);
+
             tr.appendChild(td);
 
             table.appendChild(tr);

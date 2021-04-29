@@ -64,6 +64,10 @@
             font-size: 30px;
             color: rgba(45, 168, 188, 255);
         }
+
+        #meter {
+            margin-right: 10px;
+        }
     </style>
 </head>
 
@@ -165,6 +169,7 @@
                             <th>Skill</th>
                             <th>Current XP</th>
                             <th>XP to 120</th>
+                            <th>Progress</th>
                         </tr>
                     </table>
                     <script src="runescape.js"></script>
