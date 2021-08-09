@@ -44,9 +44,10 @@ function printSkills(skills, name, choice) {
             filter = L200M;
             break;
     }
-
+    let total = 0;
     skills.forEach(skill => {
         let xp = Math.round(skill.xp / 10)
+     
         if (xp < filter) {
             tr = document.createElementNS(NS, "tr");
 
@@ -66,6 +67,7 @@ function printSkills(skills, name, choice) {
             td = document.createElementNS(NS, "td");
             td.innerHTML = numberWithDots(filter - xp);
             tr.appendChild(td);
+            total += filter - xp;
 
             td = document.createElementNS(NS, "td");
 
@@ -97,6 +99,6 @@ function printSkills(skills, name, choice) {
         tr.appendChild(td);
         table.appendChild(tr);
     }
-    document.getElementById("statheading").innerHTML = "#" + cnt + " " + choice + " Skills for <u>" + name + "</u> to go";
+    document.getElementById("statheading").innerHTML = "#" + cnt + " " + choice + " Skills for <u>" + name + "</u> (" + numberWithDots(total) + " xp to go)";
     document.getElementById("playername").value = name;
 }
